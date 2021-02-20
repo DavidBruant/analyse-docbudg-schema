@@ -15,6 +15,13 @@
     [1] http://www.w3.org/Consortium/Legal/copyright-software-19980720
     [2] http://www.w3.org/Consortium/Legal/IPR-FAQ-20000620.html#DTD
 -->
+<!--
+
+Schema de sujets math/crypto : aucune donnée relevant de l'article Article L311-6 du CRPA
+
+-->
+
+
 <schema targetNamespace="http://www.w3.org/2000/09/xmldsig#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.1">
 	<!-- Basic Types Defined for Signatures -->
 	<simpleType name="CryptoBinary">

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by test (test) -->
 <xs:schema targetNamespace="http://uri.etsi.org/01903/v1.1.1#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns="http://uri.etsi.org/01903/v1.1.1#" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../xmldsig/xmldsig-core-schema.xsd"/>
+	<!--
+
+		cet import concerne de sujets math/crypto : aucune donnée relevant de l'article L311-6 du CRPA
+
+		<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../xmldsig/xmldsig-core-schema.xsd"/>
+
+	-->
+	<!--
+
+		Les objets décrits dans ce fichier sont abstraits et n'ont rien à voir avecl'article L311-6 du CRPA
+
+	-->
 	<!-- Start auxiliary types definitions: AnyType, ObjectIdentifierType, EncapsulatedPKIDataType and TimestampType-->
 	<!-- Start AnyType -->
 	<xs:element name="Any" type="AnyType"/>

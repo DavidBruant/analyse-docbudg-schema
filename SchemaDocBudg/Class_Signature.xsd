@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://www.w3.org/2000/09/xmldsig#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xad="http://uri.etsi.org/01903/v1.1.1#" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="http://uri.etsi.org/01903/v1.1.1#" schemaLocation="xades/XAdES-core-schema.xsd"/>
-	<xs:include schemaLocation="xmldsig/xmldsig-core-schema.xsd"/>
+	<!--
+		ces import concernent des sujets math/crypto qui n'ont rien à voir avec l'article L311-6 du CRPA
+
+		<xs:import namespace="http://uri.etsi.org/01903/v1.1.1#" schemaLocation="xades/XAdES-core-schema.xsd"/>
+		<xs:include schemaLocation="xmldsig/xmldsig-core-schema.xsd"/>
+	-->
 	
 	<xs:complexType name="PESSignatureType">
 		<xs:complexContent>
