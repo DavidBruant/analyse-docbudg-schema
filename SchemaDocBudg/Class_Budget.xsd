@@ -4,12 +4,13 @@
 		Cet include ne contient rien de suspcieux au regard de l'article L311-6 du CRPA
 		<xs:include schemaLocation="Class_LigneBudget.xsd"/>
 
-
 		Cet include contient un cas suspicieux : l'élément NomPJ du type complexe TPJReference
 		<xs:include schemaLocation="Class_PJReference.xsd"/>
 
+		Cet include ne contient rien de suspcieux au regard de l'article L311-6 du CRPA
+		<xs:include schemaLocation="CommunBudget.xsd"/>
+
 	-->
-	<xs:include schemaLocation="CommunBudget.xsd"/>
 	<xs:include schemaLocation="CommunAnnexe.xsd"/>
 	<xs:include schemaLocation="Simple_Type.xsd"/>
 	<xs:include schemaLocation="Class_Annexes.xsd"/>
