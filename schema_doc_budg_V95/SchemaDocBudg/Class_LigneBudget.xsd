@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.minefi.gouv.fr/cp/demat/docbudgetaire"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.minefi.gouv.fr/cp/demat/docbudgetaire"
+	elementFormDefault="qualified" xmlns:z="odm:enrichissement">
+	<xs:include schemaLocation="Class_PJReference.xsd"/>
+	<xs:include schemaLocation="CommunBudget.xsd"/>
+	<xs:complexType name="TLigneBudget">
+		<xs:sequence>
+			<xs:element name="Nature" type="Base_ChaineNum30" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Compte par nature</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LibCpte" type="Base_Texte100" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dans le cadre d'une opération sur compte de tiers ou une opération d'équipement, indication du libellé de cette opération.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Fonction" type="Base_ChaineNum10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Compte par fonction.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Operation" type="Base_Texte10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<z:libelle>Code de l'opération</z:libelle>
+						<z:description>Dans le cas d'une opération "Pour Vote", ce compte opération doit contenir uniquement des chiffres ; dans le cas d'une opération "Pour information", c'est libre.</z:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContNat" type="Base_ChaineNum12" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>(PES) Contrôle compte budgétaire. Zone destinée à recevoir le niveau de vote des crédits. Le niveau décrit doit être soit identique soit plus agrégé que le niveau d'exécution.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ArtSpe" type="Base_Booleen" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Article spécialisé</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContFon" type="Base_ChaineNum10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Contrôle fonction. Zone destinée à recevoir le niveau de vote des crédits. Le niveau décrit doit être soit identique soit plus agrégé que le niveau d'exécution.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ContOp" type="Base_Texte10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Contrôle opération. Zone destinée à recevoir le niveau de vote des crédits. Le niveau décrit doit être soit identique soit plus agrégé que le niveau d'exécution.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CodRD" type="TCodRD">
+				<xs:annotation>
+					<xs:documentation>Code recette / dépense. Cette zone permet de déterminer le sens (recette - dépense) du crédit concerné. Valeurs: 0=recette, 1=dépense.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtBudgPrec" type="Base_Montant" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Montant budget précédent</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtRARPrec" type="Base_Montant" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<z:libelle>Montant reste à réaliser N-1.</z:libelle>
+						<xs:description>Cette balise est servie au BP/BS/DM uniquement en cas de reprise des résultats de l’exercice précédent.
+						Cette balise est servie au CA pour présenter les restes à réaliser de l’exercice précédent.</xs:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtPropNouv" type="Base_Montant" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Montant "Propositions nouvelles"</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtPrev" type="Base_Montant" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Montant budget voté (en présence d'une balise MtPrev, celle ci doit obligatoirement être valorisée soit du montant prévu soit d'un montant égal à zéro)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CredOuv" type="Base_Montant" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Crédits ouverts à l'article</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtReal" type="Base_Montant" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Montant signé des réalisations budgétaires</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtRAR3112" type="Base_Montant" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+						<z:libelle>Montant reste à réaliser  de l’exercice.</z:libelle>
+						<xs:description>Cette balise est servie au CA.
+						Cette balise peut également être utilisé au BP/BS/DM pour présenter les informations du CA N-1 (présence des vues « Exécution du budget de l’exercice précédent »).</xs:description>
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OpBudg" type="TOpBudg">
+				<xs:annotation>
+					<xs:documentation>Cette zone permet d'isoler les opérations d'ordre budgétaire. Valeurs: 0=opération réelle ou mixte 1=opération d'ordre. Par défaut valeur 0. La valeur "T" est utilisée pour les totaux.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TypOpBudg" type="TTypOpBudg" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Cette zone permet de déterminer si une opération d'ordre est effectuée à l'intérieur d'une même section ou bien de section à section.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="OpeCpteTiers" type="Base_ChaineNum10" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Numéro de convention de l'opération pour compte de tiers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MtSup" type="TMontant_Sup" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Voir description nomenclature pour connaître les codes des différents montants supplémentaires en fonction du document budgétaire</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CaracSup" type="TCarac_Sup" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Voir description nomenclature (DescNomenclature.xml) pour connaître les codes des différentes caractéristiques en fonction du document budgétaire</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+		</xs:sequence>
+		<xs:attribute name="calculated" use="optional" fixed="true">
+			<xs:annotation>
+				<xs:documentation>Permet d'indiquer si une ligne est une ligne calculée ou non. Toutes les lignes de totalisation doivent porter cet attribut.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="generator" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Permet d'indiquer quel composant a généré cette ligne. A n'utiliser qu'a des fins de debug</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:ID" use="optional">
+			<xs:annotation>
+				<xs:documentation>Permet de spécifier un ID pour la ligne. A n'utiliser qu'a des fins de debug</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>
