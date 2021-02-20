@@ -40,7 +40,9 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Budget" type="TBudget"/>
-			<xs:group ref="ds:PESSignatureGroup" minOccurs="0"/>
+			<!-- 
+				<xs:group ref="ds:PESSignatureGroup" minOccurs="0"/>
+			-->
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TEnTeteDocBudgetaire">
