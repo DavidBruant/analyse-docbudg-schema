@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:z="odm:enrichissement">
+	<!--
+	
 	<xs:include schemaLocation="Simple_Type.xsd"/>
+	-->
+
+	<!--
+		Dans ce fichier, il n'y a que des types enumérés ou non-utilisés
+
+	-->
 	<xs:complexType name="ATCodNatOrgGroup">
 		<xs:attribute name="V" use="required">
 			<xs:simpleType>

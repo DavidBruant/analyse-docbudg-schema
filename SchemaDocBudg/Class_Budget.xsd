@@ -10,8 +10,10 @@
 		Cet include ne contient rien de suspcieux au regard de l'article L311-6 du CRPA
 		<xs:include schemaLocation="CommunBudget.xsd"/>
 
+		Dans cet include, il n'y a que des types enumérés ou non-utilisés
+		<xs:include schemaLocation="CommunAnnexe.xsd"/>
+
 	-->
-	<xs:include schemaLocation="CommunAnnexe.xsd"/>
 	<xs:include schemaLocation="Simple_Type.xsd"/>
 	<xs:include schemaLocation="Class_Annexes.xsd"/>
 	<xs:complexType name="TBudget">
