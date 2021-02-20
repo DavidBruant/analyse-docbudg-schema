@@ -3,8 +3,26 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.minefi.gouv.fr/cp/demat/docbudgetaire"
 	elementFormDefault="qualified" xmlns:z="odm:enrichissement">
-	<xs:include schemaLocation="Class_PJReference.xsd"/>
-	<xs:include schemaLocation="CommunBudget.xsd"/>
+
+	<!--
+
+		Cet include contient un cas suspicieux : l'élément NomPJ du type complexe TPJReference
+
+		<xs:include schemaLocation="Class_PJReference.xsd"/>
+
+	-->
+
+	<!--
+		le contenu décrit par cet include est lié à des meta-données budgetaires et n'a rien à voir avec l'article L311-6 du CRPA
+
+		<xs:include schemaLocation="CommunBudget.xsd"/>
+	-->
+
+
+	<!--
+		le contenu décrit par ce fichier est lié à des ligne budgétaire et n'a rien à voir avec l'article L311-6 du CRPA
+	-->
+	<!--
 	<xs:complexType name="TLigneBudget">
 		<xs:sequence>
 			<xs:element name="Nature" type="Base_ChaineNum30" minOccurs="0">
@@ -141,4 +159,5 @@
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
+	-->
 </xs:schema>

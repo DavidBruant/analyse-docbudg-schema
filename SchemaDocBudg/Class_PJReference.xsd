@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.minefi.gouv.fr/cp/demat/docbudgetaire" elementFormDefault="qualified" xmlns:z="odm:enrichissement" targetNamespace="http://www.minefi.gouv.fr/cp/demat/docbudgetaire">
 	<xs:include schemaLocation="Simple_Type.xsd"/>
+
+	<!--
+		Le type ici est utilisé dans Class_Budget comme "Référence à une pièce justificative"
+
+		Bien que très très improbable, il est possible que l'élément NomPJ contienne le nom d'une personne
+	-->
+
 	<xs:complexType name="TPJReference">
 		<xs:sequence>
 			<xs:element name="Support">

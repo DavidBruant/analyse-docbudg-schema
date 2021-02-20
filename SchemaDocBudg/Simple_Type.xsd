@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by SERGE MURET (SEMA GROUP SA) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--
+		Les types ici sont très génériques et pas suspicieux en eux-même au titre de l'article L311-6 du CRPA
+		
+		Sont commentés les types qui ne contiendraient des données à occulter que par erreur
+		(et donc sont gardés décommentés les types à surveiller)
+	-->
+	
+	<!--
 	<xs:complexType name="Base_Siret">
 		<xs:attribute name="V" type="V_Siret" use="required"/>
 	</xs:complexType>
@@ -36,6 +44,7 @@
 			<xs:maxLength value="11"/>
 		</xs:restriction>
 	</xs:simpleType>
+	-->
 	<xs:complexType name="Base_Alphanum10">
 		<xs:attribute name="V" type="V_Alphanum10" use="required"/>
 	</xs:complexType>
@@ -45,6 +54,8 @@
 			<xs:pattern value="[0-9a-zA-Z]*"/>
 		</xs:restriction>
 	</xs:simpleType>
+	
+	<!--
 	<xs:complexType name="Base_Alphanum2">
 		<xs:attribute name="V" type="V_Alphanum2" use="required"/>
 	</xs:complexType>
@@ -63,6 +74,7 @@
 			<xs:pattern value="[0-9a-zA-Z]*"/>
 		</xs:restriction>
 	</xs:simpleType>
+	-->
 	<xs:complexType name="Base_Alphanum50">
 		<xs:attribute name="V" type="V_Alphanum50" use="required"/>
 	</xs:complexType>
@@ -102,6 +114,7 @@
 			<xs:pattern value="[0-9]*"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<!--
 	<xs:complexType name="Base_Num3">
 		<xs:attribute name="V" type="V_Num3" use="required"/>
 	</xs:complexType>
@@ -126,6 +139,7 @@
 			<xs:totalDigits value="5"/>
 		</xs:restriction>
 	</xs:simpleType>
+	-->
 	<xs:complexType name="Base_Num8">
 		<xs:attribute name="V" type="V_Num8" use="required"/>
 	</xs:complexType>
@@ -158,6 +172,7 @@
 			<xs:totalDigits value="20"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<!--
 	<xs:complexType name="Base_Texte1">
 		<xs:attribute name="V" type="V_Texte1" use="required"/>
 	</xs:complexType>
@@ -182,6 +197,7 @@
 			<xs:maxLength value="3"/>
 		</xs:restriction>
 	</xs:simpleType>
+	-->
 	<xs:complexType name="Base_Texte7">
 		<xs:attribute name="V" type="V_Texte7" use="required"/>
 	</xs:complexType>
@@ -238,6 +254,7 @@
 			<xs:maxLength value="100"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<!--
 	<xs:complexType name="Base_Annee">
 		<xs:attribute name="V" type="V_Annee" use="required"/>
 	</xs:complexType>
@@ -330,4 +347,5 @@
 	<xs:complexType name="Base_Date_MM_AAAA">
 		<xs:attribute name="V" type="xs:gYearMonth" use="required"/>
 	</xs:complexType>
+	-->
 </xs:schema>

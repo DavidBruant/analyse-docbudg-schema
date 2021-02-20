@@ -24,4 +24,12 @@ Partir du fichier [Class_DocumentBudgetaire.xsd](SchemaDocBudg/Class_DocumentBud
 
 ## Analyse et discussion
 
+### Cas suspicieux
+
+- élément `NomPJ` du type `TPJReference` de [SchemaDocBudg/Class_PJReference.xsd](SchemaDocBudg/Class_PJReference.xsd)
+- 
+
+
+
+
 

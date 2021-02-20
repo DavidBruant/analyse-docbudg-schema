@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!--
+	
 	<xs:include schemaLocation="Simple_Type.xsd"/>
+
+	-->
+
+	<!--
+		le contenu décrit par ce fichier est lié à des meta-données budgetaires et n'a rien à voir avec l'article L311-6 du CRPA
+	-->
+
+
+	<!--
 	<xs:complexType name="TSpecifBudget">
 		<xs:attribute name="V" use="required">
 			<xs:simpleType>
@@ -215,6 +226,7 @@
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
+	-->
 	<!-- remplace par une CaracSup -->
 	<!--xs:complexType name="TAECP">
 		<xs:attribute name="V" use="required">
@@ -233,7 +245,9 @@
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
-	</xs:complexType -->
+	</xs:complexType-->
+	
+	<!--
 	<xs:complexType name="TCodRD">
 		<xs:attribute name="V" use="required">
 			<xs:simpleType>
@@ -266,11 +280,13 @@
 							<xs:documentation>Opération d'ordre</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration>
+					-->
 					<!--xs:enumeration value="T">
 						<xs:annotation>
 							<xs:documentation>Total</xs:documentation>
 						</xs:annotation>
 					</xs:enumeration-->
+					<!--
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -295,4 +311,5 @@
 		<xs:attribute name="Code" type="V_Texte30" use="required"/>
 		<xs:attribute name="V" type="V_Texte100"/>
 	</xs:complexType>
+	-->
 </xs:schema>
