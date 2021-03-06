@@ -36,6 +36,7 @@
 					<xs:documentation>Raison sociale de l'organisme</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<!-- Dommage que le type ATCodNatJurBenef ne soit pas utilisé :-( -->
 			<xs:element name="NatJurOrgEng" type="Base_Texte100" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Nature juridique de l'organisme</xs:documentation>

@@ -16,8 +16,17 @@
 		Dans cet include, il n'y a que des types génériques pas problématiques en eux-même
 		<xs:include schemaLocation="Simple_Type.xsd"/>
 
+		
+		
+		Ptet supprimer tous les Champ_Editeur ?
+		Ptet PJRef
+
+		Voir le détail dans : 
+		<xs:include schemaLocation="Class_Annexes.xsd"/>
+
 	-->
-	<xs:include schemaLocation="Class_Annexes.xsd"/>
+
+	
 	<xs:complexType name="TBudget">
 		<xs:sequence>
 			<xs:element name="EnTeteBudget" type="TEnTeteBudget"/>

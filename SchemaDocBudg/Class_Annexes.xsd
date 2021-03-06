@@ -5,33 +5,33 @@
            xmlns="http://www.minefi.gouv.fr/cp/demat/docbudgetaire" xmlns:z="odm:enrichissement"
            targetNamespace="http://www.minefi.gouv.fr/cp/demat/docbudgetaire"
            elementFormDefault="qualified">
+    <!--
+    Dans cet include, il n'y a que des types enumérés ou non-utilisés
     <xs:include schemaLocation="CommunAnnexe.xsd"/>
+
+
+    == Dans ces includes, il n'y a rien de pertinent au regard de l'article L311-6 du CRPA ==
+
     <xs:include schemaLocation="Class_Emprunt.xsd"/>
     <xs:include schemaLocation="Class_Tresorerie.xsd"/>
     <xs:include schemaLocation="Class_Charges.xsd"/>
     <xs:include schemaLocation="Class_Tiers.xsd"/>
     <xs:include schemaLocation="Class_CreditBail.xsd"/>
     <xs:include schemaLocation="Class_PPP.xsd"/>
-    <xs:include schemaLocation="Class_AutresEngagements.xsd"/>
-    <xs:include schemaLocation="Class_Concours.xsd"/>
+    <xs:include schemaLocation="Class_AutresEngagements.xsd"/> (mentions spécifique "d'organismes bénéficiaires", choix uniquement entre "public" et "privé", donc pas de personnes physiques)
     <xs:include schemaLocation="Class_RecettesAffectees.xsd"/>
-    <xs:include schemaLocation="Class_Formation.xsd"/>
     <xs:include schemaLocation="Class_Fiscalite.xsd"/>
     <xs:include schemaLocation="Class_Consolidation.xsd"/>
-    <xs:include schemaLocation="Class_OrganismeEng.xsd"/>
     <xs:include schemaLocation="Class_OrganismeGroup.xsd"/>
     <xs:include schemaLocation="Class_Patrimoine.xsd"/>
-    <xs:include schemaLocation="Class_Personnel.xsd"/>
     <xs:include schemaLocation="Class_Dettes.xsd"/>
     <xs:include schemaLocation="Class_Ventilation.xsd"/>
     <xs:include schemaLocation="Class_ContratCouv.xsd"/>
     <xs:include schemaLocation="Class_AmortissementMethode.xsd"/>
     <xs:include schemaLocation="Class_Provision.xsd"/>
     <xs:include schemaLocation="Class_APCP.xsd"/>
-    <xs:include schemaLocation="Class_Signatures.xsd"/>
     <xs:include schemaLocation="Class_EtabService.xsd"/>
     <xs:include schemaLocation="Class_Sommaire.xsd"/>
-    <xs:include schemaLocation="Class_Pret.xsd"/>
     <xs:include schemaLocation="Class_ContratCouvReference.xsd"/>
     <xs:include schemaLocation="Class_PersonnelSolde.xsd"/>
     <xs:include schemaLocation="Class_Service_Ferroviaire_Bud.xsd"/>
@@ -42,8 +42,44 @@
     <xs:include schemaLocation="Class_Fonds_Europeens_Programmation.xsd"/>
     <xs:include schemaLocation="Class_Fonds_Aides_Eco.xsd"/>
     <xs:include schemaLocation="Class_Formation_Pro_Jeunes.xsd"/>
-    <xs:include schemaLocation="Class_MembresASA.xsd"/>
     <xs:include schemaLocation="Class_FluxCroises.xsd"/>
+
+    
+    == Prénoms et noms d'élu.e.s ==
+
+    Concernant cet include, j'ai un doute
+    "NomElu" est clairement une référence au Prénom + Nom de l'élu.e
+    Toutefois, la seule chose indiquée est l'Action de formation financée (pas de date, pas de montant, etc.) 
+    qui est sûrement une information publique ou publiquement accessible
+    ... ou au moins pas relevant de la vie privée au sens où il est attendu qu'un.e élu.e se forme
+    <xs:include schemaLocation="Class_Formation.xsd"/>
+
+    Cet include fait référence à des noms et prénoms, mais il s'agit d'élu.e.s (Signataire) signant le budget, donc une information publique
+    <xs:include schemaLocation="Class_Signatures.xsd"/>
+
+    
+    == Potentiels prénoms et nom de personnes, menant à une potentielle violation de la vie privée ==
+
+    Morceau à anonymiser : si CodNatJurBenefCA vaut P3 (personne physique), anonymiser LibOrgaBenef
+    <xs:include schemaLocation="Class_Concours.xsd"/>
+
+    Les chances sont très faibles, mais il n'est pas impossible que NomOrgEng contienne le nom d'une personne physique
+    <xs:include schemaLocation="Class_OrganismeEng.xsd"/>
+
+    Morceau à anonymiser : NomBenefPret parce que ptèt nom de personne physique
+    <xs:include schemaLocation="Class_Pret.xsd"/>
+
+    Dans cet include, anonymiser le propriétaire
+    <xs:include schemaLocation="Class_MembresASA.xsd"/>
+
+    
+    == Recoupement possible avec d'autres information, mais peu probable et très difficile à identifier ==
+
+    Dans cet include, il n'est pas clair si une information permet une identification facile d'une personne physique
+    ni laquelle/lesquelles si c'est le cas
+    <xs:include schemaLocation="Class_Personnel.xsd"/>
+
+	-->
     <xs:complexType name="TAnnexes">
         <xs:sequence>
             <xs:element name="DATA_EMPRUNT" type="TEmprunts" minOccurs="0" maxOccurs="1">
