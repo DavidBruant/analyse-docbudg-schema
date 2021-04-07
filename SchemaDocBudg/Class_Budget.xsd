@@ -16,10 +16,7 @@
 		Dans cet include, il n'y a que des types génériques pas problématiques en eux-même
 		<xs:include schemaLocation="Simple_Type.xsd"/>
 
-		
-		
-		Ptet supprimer tous les Champ_Editeur ?
-		Ptet PJRef
+		Ptet supprimer tous les Champ_Editeur
 
 		Voir le détail dans : 
 		<xs:include schemaLocation="Class_Annexes.xsd"/>

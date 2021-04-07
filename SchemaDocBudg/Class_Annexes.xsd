@@ -9,7 +9,6 @@
     Dans cet include, il n'y a que des types enumérés ou non-utilisés
     <xs:include schemaLocation="CommunAnnexe.xsd"/>
 
-
     == Dans ces includes, il n'y a rien de pertinent au regard de l'article L311-6 du CRPA ==
 
     <xs:include schemaLocation="Class_Emprunt.xsd"/>
@@ -43,7 +42,7 @@
     <xs:include schemaLocation="Class_Fonds_Aides_Eco.xsd"/>
     <xs:include schemaLocation="Class_Formation_Pro_Jeunes.xsd"/>
     <xs:include schemaLocation="Class_FluxCroises.xsd"/>
-
+    <xs:include schemaLocation="Class_OrganismeEng.xsd"/>
     
     == Prénoms et noms d'élu.e.s ==
 
@@ -62,9 +61,6 @@
 
     Morceau à anonymiser : si CodNatJurBenefCA vaut P3 (personne physique), anonymiser LibOrgaBenef
     <xs:include schemaLocation="Class_Concours.xsd"/>
-
-    Les chances sont très faibles, mais il n'est pas impossible que NomOrgEng contienne le nom d'une personne physique
-    <xs:include schemaLocation="Class_OrganismeEng.xsd"/>
 
     Morceau à anonymiser : NomBenefPret parce que ptèt nom de personne physique
     <xs:include schemaLocation="Class_Pret.xsd"/>
