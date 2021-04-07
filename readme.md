@@ -44,7 +44,7 @@ Ici, on liste les éléments et attributs (décrit par un sélecteur CSS) qui n�
     - l'élément `Proprietaire` peut contenir les noms et prénoms d'une personne physique
 
 
-### Cas un peu compliqués
+### Cas ne nécessitant pas occultation, mais à garder en tête en cas d'évolution du format de données
 
 - `Budget > Annexes > DATA_FORMATION > FORMATION > NomElu[V]`
     - Défini dans [Class_Formation.xsd](SchemaDocBudg/Class_Formation.xsd). La documentation dit "Nom Prénom de l'élu". L'élément `FORMATION` ne contient que l'"Action de formation financée". Le nom et le prénom de l'élu.e de la collectivité sont déjà des informations publiques. Aussi, le fait que les élus se forment dans l'exercice de leur mandat est de notoriété publique. Les données comme le prix de la formation, son lieu, ses dates précises (au-delà du fait qu'elle a eu lieu pendant l'exercice comptable du document budgétaire) ne sont pas disponibles. Aussi, la décision de formation fait sûrement déjà l'objet d'une décision du conseil délibérant, il ne s'agit donc pas d'une donnée personnelle.
